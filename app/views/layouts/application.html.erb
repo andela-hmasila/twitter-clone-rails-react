@@ -14,13 +14,20 @@
 
   <body>
     <div class="right">
+
+      <div class="row valign-wrapper">
       <% if current_user %>
-        Welcome <%= link_to current_user.full_name, "/profile"%>
+      <div class="col s4">
+      <img class="circle responsive-img" src="<%=current_user.gravatar%>"/>
+      </div>
+        <span class="user-profile"><%= link_to current_user.full_name, "/profile"%></span>
         <%= link_to "logout", destroy_user_session_path, method: "DELETE" %>
       <% else %>
-      <%= link_to "login", new_user_session_path %>
-      <%= link_to "signup", new_user_registration_path %>
+      <span class="user-profile"><%= link_to "login", new_user_session_path %>
+      <%= link_to "signup", new_user_registration_path %></span>
+
       <% end %>
+      </div>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
