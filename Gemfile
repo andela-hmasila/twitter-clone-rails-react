@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'react-rails'
 gem 'devise'
+gem 'react-rails-hot-loader', '~> 0.7.0'
 
 group :development, :test do
   gem 'pry-rails'
